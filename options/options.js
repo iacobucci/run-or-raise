@@ -8,7 +8,7 @@ function saveOptions(e) {
 function restoreOptions() {
   var gettingItem = browser.storage.sync.get('enLinks');
   gettingItem.then((res) => {
-    document.querySelector("#enLinks").value = res.enLinks || 'https://open.spotify.com,https://web.whatsapp.com,https://web.telegram.org,https://www.google.com/maps';
+    document.querySelector("#enLinks").value = res.enLinks || 'https://open.spotify.com,https://web.whatsapp.com,https://web.telegram.org';
   });
 }
 
