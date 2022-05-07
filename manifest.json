@@ -1,0 +1,27 @@
+{
+  "applications": {
+    "gecko": {
+      "id": "run-or-raise@valerioiacobucci.com"
+    }
+  },
+
+  "manifest_version": 2,
+  "name": "Run or raise",
+  "version": "1.0.0",
+  "description": "If the website is already opened, raise the old tab. Else open a new one. You can set a list of links to have this behaviour. This works best when launching shortcuts.",
+  
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+
+
+  "options_ui": {
+    "page": "options/options.html",
+    "browser_style": true
+  },
+
+  "background": {
+    "scripts": ["run-or-raise.js"]
+  }
+}

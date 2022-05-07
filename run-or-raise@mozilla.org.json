@@ -1,0 +1,8 @@
+{
+  "name":  "run-or-raise@valerioiacobucci.com",
+  "description": "ignored",
+  "type": "storage",
+  "data": {
+    "managed-links": "['https://open.spotify.com', 'https://keep.google.com/', 'https://web.whatsapp.com/', 'https://web.telegram.org']"
+  }
+}
