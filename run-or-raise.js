@@ -1,3 +1,5 @@
+var managedTabs = [];
+
 //this function helps pattern matching links
 function patternUrl(url) {
 	if (url[url.length - 1] == "/")
@@ -11,6 +13,8 @@ function onError(error) {
 }
 
 function handleUpdated(tabId, changeInfo, currentTab) {
+
+	console.log(managedTabs);
 
 	//tabs will be a list containing all opened tabs
 	browser.tabs.query({}).then((tabs) => {
@@ -132,19 +136,25 @@ function handleUpdated(tabId, changeInfo, currentTab) {
 									newPos++;
 							}
 
-							//focus the main window, move currentTab to the main window and then place it at index newPos, make the currentTab active
-							browser.windows.update(mainWindowId, {
-								focused: true
-							}).then(() => {
-								browser.tabs.move(currentTab.id, {
-									index: newPos,
-									windowId: mainWindowId
+							//if the tab hasn'te already been managed
+							if (managedTabs.indexOf(currentTab.id) == -1) {
+								//focus the main window, move currentTab to the main window and then place it at index newPos, make the currentTab active
+								browser.windows.update(mainWindowId, {
+									focused: true
 								}).then(() => {
-									browser.tabs.update(currentTab.id, {
-										active: true
+
+									managedTabs.push(currentTab.id);
+
+									browser.tabs.move(currentTab.id, {
+										index: newPos,
+										windowId: mainWindowId
+									}).then(() => {
+										browser.tabs.update(currentTab.id, {
+											active: true
+										});
 									});
 								});
-							});
+							}
 						}
 					}
 				}
