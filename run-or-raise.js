@@ -1,4 +1,4 @@
-//this function helps pattern matching urls
+//this function helps pattern matching links
 function patternUrl(url) {
 	if (url[url.length - 1] == "/")
 		return url.split("://")[1].substring(0, url.split("://")[1].length - 1);
