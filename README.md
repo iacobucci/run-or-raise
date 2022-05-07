@@ -5,4 +5,4 @@ A Firefox extension. If the website is already opened, raise the old tab. Else o
 Download the release, navigate to `about:addons`, hit the gear icon and select the package on "Install Add-on From File..."
 
 ## usage
-Once installed head back ot `about:addons` and select the "Run or Raise". From the preferences page you can set the URL to Run or Raise!
+Once installed head back ot `about:addons` and select the "Run or raise". From the preferences page you can set the URL to Run or raise!
